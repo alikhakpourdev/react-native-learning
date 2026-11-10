@@ -1,0 +1,13 @@
+---
+description: Feature-based architecture and separation of concerns for Expo Router apps
+globs: "src/**/*.ts, src/**/*.tsx, app/**/*.ts, app/**/*.tsx"
+alwaysApply: false
+---
+# Pragmatic feature architecture
+- Match the structure already present. For new or expanding features, prefer `src/features/<feature>/{components,hooks,services,types}` only for folders that are needed.
+- Treat Expo Router files (`app/` or `src/app/`) as thin route entry points; keep reusable UI and domain logic outside routes.
+- UI components present data and events; hooks manage reusable UI/async behavior; services/adapters isolate external IO when warranted.
+- Keep feature-private code local. Move to `src/components` / `src/lib` only after proven cross-feature reuse.
+- Use controlled components, React composition and custom hooks; choose `useReducer` for complex local transitions, not by default.
+- Prefer explicit dependencies and adapters for independently changing APIs/storage; do not create repositories or interfaces with one trivial implementation solely for pattern compliance.
+- Handle loading, error, empty and success states; respect Expo Router conventions and platform constraints.

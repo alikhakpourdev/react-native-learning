@@ -1,0 +1,11 @@
+---
+description: Testing and verification standards when modifying features or fixing bugs
+alwaysApply: false
+---
+# Testing and verification
+- Preserve existing test runner and lint setup; never silently add a new test framework.
+- For bugs, write or update a reproducing regression test when practical.
+- Prefer unit tests of pure functions/hooks and integration tests of visible user behavior over brittle implementation details.
+- Cover boundary conditions, loading/errors, empty results, async cancellation and interactions where relevant.
+- When project scripts support it, run `npx tsc --noEmit`, `npx expo lint` and existing test script. If unavailable, report this honestly.
+- Do not alter unrelated tests or reduce assertions merely to make checks pass.

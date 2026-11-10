@@ -1,0 +1,15 @@
+---
+description: TypeScript, Clean Code, DRY and SOLID conventions for RN source files
+globs: "**/*.ts, **/*.tsx"
+alwaysApply: false
+---
+# TypeScript and clean code
+- Type public props, function inputs, outputs and API models; prefer `unknown` with validation to `any`.
+- Use descriptive, intent-revealing names; avoid ambiguous abbreviations and boolean parameters that obscure meaning.
+- Keep functions focused; extract helpers/hooks only when it improves clarity, reuse or independent testing.
+- Apply SRP at component/function boundaries; use composition instead of deep inheritance.
+- Apply OCP via extension points only when requirements demonstrate variation; apply ISP by keeping props/interfaces focused.
+- Use dependency inversion at meaningful external boundaries (API, storage, platform integrations), not for every helper.
+- Apply DRY to duplicated business knowledge/behavior, not to superficially similar JSX that may evolve separately.
+- Use early returns, immutable updates, named constants for meaningful values and explicit error handling.
+- Avoid `as any`, non-null assertions without evidence, broad try/catch swallowing errors and unnecessary comments.

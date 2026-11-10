@@ -1,0 +1,12 @@
+---
+description: Always-on guardrails for Expo React Native code changes
+alwaysApply: true
+---
+# Engineering guardrails
+- Before editing, inspect the relevant files, package.json, tsconfig.json and existing project conventions. Never assume a package or API is installed.
+- Preserve the current Expo SDK, React Native, routing, styling engine and gluestack-ui versions unless migration is explicitly requested.
+- Make the smallest correct change; avoid unsolicited rewrites, new dependencies, extra abstraction and speculative features.
+- Favor readable, testable, typed solutions over clever one-liners and artificial complexity (KISS, YAGNI).
+- Prefer composition and explicit dependencies; use SOLID and DRY pragmatically, not as excuses to introduce needless layers.
+- No secrets, tokens or private configuration in source code or logs. Avoid unsafe destructive commands.
+- When finishing, summarize changed files, any architectural trade-offs and the validation actually performed. Never claim tests passed unless run.

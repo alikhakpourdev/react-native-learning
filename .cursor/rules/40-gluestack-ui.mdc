@@ -1,0 +1,14 @@
+---
+description: Gluestack UI component and styling conventions
+globs: "**/*.tsx, **/*.css"
+alwaysApply: false
+---
+# Gluestack UI design system
+- First inspect installed gluestack-ui version, generated component locations, UI provider, styling engine (UniWind/NativeWind) and existing tokens.
+- Reuse the project's existing gluestack components, compound APIs and component variants before building bespoke primitives.
+- Prefer shared semantic color/spacing/typography tokens and existing variants over repeated hard-coded colors or magic values.
+- Keep styling consistent with the installed engine and version; do not mix incompatible NativeWind/UniWind setup instructions.
+- Favor accessible labels, touch targets, clear focus/error/disabled states and consistent light/dark appearance.
+- Never assume web HTML elements or browser CSS are available in native screens.
+- Avoid patching generated UI component internals for screen-specific needs when composition or variants suffice.
+- For significant Gluestack changes, consult the official gluestack skill for the *installed* version if present.

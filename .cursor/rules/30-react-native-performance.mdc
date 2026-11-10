@@ -1,0 +1,14 @@
+---
+description: React Native rendering, lists and interaction performance
+globs: "**/*.tsx"
+alwaysApply: false
+---
+# React Native performance
+- Diagnose measured render or interaction bottlenecks before adding memoization. React Compiler may already handle many cases.
+- For potentially long datasets prefer FlatList or SectionList (or the app's existing virtualized-list solution), with stable item keys; avoid rendering large arrays in ScrollView.
+- Never use array indices as keys for reorderable/mutable lists.
+- Avoid expensive synchronous computation inside render; avoid unnecessary state, derived-state effects and cascaded updates.
+- Avoid inline anonymous renderItem only when it actually causes measurable or documented problems; do not over-apply useMemo/useCallback.
+- Choose properly sized images, clean up listeners/timers and cancel obsolete async work where supported.
+- Keep accessibility, touch targets, safe areas, keyboard behavior and Android/iOS platform differences in scope.
+- Confirm optimizations with a before/after observable outcome when possible.

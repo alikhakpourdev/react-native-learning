@@ -1,0 +1,13 @@
+---
+description: API boundaries, async error handling and mobile security
+globs: "**/*.ts, **/*.tsx"
+alwaysApply: false
+---
+# Data, errors and security
+- Keep API endpoints and response parsing in cohesive service functions; validate untrusted server data at boundaries if needed.
+- Handle network timeout/cancellation, loading, errors and retries deliberately; do not swallow exceptions.
+- Distinguish local UI state, server state and persisted state. Add caching/state dependencies only if the project already uses them or the requirement warrants them.
+- Avoid putting secrets in Expo `EXPO_PUBLIC_*` variables, source, UI logs or public commits.
+- If persistent credentials are required, use an appropriate secure native storage mechanism after checking installed packages and platform support; do not store access tokens in plain AsyncStorage.
+- Do not introduce an API key or token to the mobile binary expecting it to remain secret.
+- Ensure mutations cannot double-submit accidentally when the UX requires exactly-once behavior; authoritative enforcement belongs on the server.
